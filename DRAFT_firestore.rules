@@ -1,0 +1,40 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Global Safety Net
+    match /{document=**} {
+      allow read, write: if false;
+    }
+    
+    // Primitives
+    function incoming() { return request.resource.data; }
+    function existing() { return resource.data; }
+    function isSignedIn() { return request.auth != null; }
+    function isValidId(id) { return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$'); }
+    
+    // Validation Blueprints
+    function isValidQuizResult(data) {
+      return data.keys().hasAll(['userId', 'score', 'total', 'createdAt'])
+        && data.keys().size() == 4
+        && data.userId == request.auth.uid
+        && data.score is int
+        && data.score >= 0
+        && data.total is int
+        && data.total >= 0
+        && data.score <= data.total
+        && data.createdAt == request.time;
+    }
+    
+    match /quiz_results/{resultId} {
+      // The user can only create a result for themselves
+      allow create: if isSignedIn() && isValidId(resultId) && isValidQuizResult(incoming());
+      
+      // Users can only read their own scores
+      allow get: if isSignedIn() && isValidId(resultId) && existing().userId == request.auth.uid;
+      allow list: if isSignedIn() && resource.data.userId == request.auth.uid;
+      
+      // Immutable after creation
+      allow update, delete: if false;
+    }
+  }
+}

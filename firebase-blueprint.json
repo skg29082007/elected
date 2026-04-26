@@ -1,0 +1,22 @@
+{
+  "entities": {
+    "QuizResult": {
+      "title": "Quiz Result",
+      "description": "A user's attempt at the election quiz.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "description": "The UID of the user who took the quiz" },
+        "score": { "type": "integer", "description": "Number of correct answers" },
+        "total": { "type": "integer", "description": "Total number of questions" },
+        "createdAt": { "type": "timestamp", "description": "When the quiz was completed" }
+      },
+      "required": ["userId", "score", "total", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/quiz_results/{resultId}": {
+      "schema": "QuizResult",
+      "description": "Stores individual quiz results for users."
+    }
+  }
+}
