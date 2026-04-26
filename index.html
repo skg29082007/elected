@@ -1,230 +1,780 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Understand how elections work with this interactive, educational, and AI-powered complete guide to the democratic process.">
-<meta name="theme-color" content="#1a3c5e">
-<title>ElectEd - Understand How Elections Work</title>
-<link rel="manifest" href="/manifest.json">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="dns-prefetch" href="https://fonts.googleapis.com">
-<link rel="dns-prefetch" href="https://generativelanguage.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-</head>
-<body>
-<a href="#main-content" class="skip-link">Skip to main content</a>
-<nav class="navbar" id="navbar">
-<div class="container nav-content">
-<a href="#" class="logo">Elect🗳️Ed</a>
-<div class="nav-links" id="navLinks">
-<a href="#hero" class="nav-link active">Home</a>
-<a href="#timeline" class="nav-link">Timeline</a>
-<a href="#quiz" class="nav-link">Quiz</a>
-<a href="#assistant" class="nav-link">Assistant</a>
-<a href="#glossary" class="nav-link">Glossary</a>
-<a href="#stats" class="nav-link">Stats</a>
-</div>
-<button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">☰</button>
-</div>
-</nav>
-<main id="main-content" style="padding-bottom:48px;">
-<section id="hero" class="container">
-<div class="hero">
-<div class="hero-content">
-<span class="badge">Interactive Education</span>
-<h1>Understand How<br/>Elections Work</h1>
-<p>Interactive. Educational. Powered by AI. Your complete guide to the democratic process, from registration to certification.</p>
-<div><a href="#timeline" class="btn btn-primary">Explore Timeline</a><a href="#assistant" class="btn btn-outline">Ask AI Assistant</a></div>
-</div>
-</div>
-</section>
-<section class="features container">
-<div class="features-grid">
-<!-- Primary feature card (larger/accented) -->
-<div class="feature-card animate-up" style="background-color: var(--accent2); color:white; border:none; grid-column: span 2; padding:32px 24px; display:flex; flex-direction:column; align-items:flex-start; text-align:left; justify-content:space-between;">
-<h3 style="font-family:'Playfair Display',serif; font-size:1.5rem; margin-bottom:8px;">Democracy Today</h3>
-<p style="opacity:0.8; font-size:0.9rem; margin-bottom:24px;">Monitoring voting systems across 193 UN Member States in real-time.</p>
-<div style="display:flex; justify-content:space-between; width:100%; margin-top:auto;">
-<div><p style="font-size:2rem; font-weight:700; line-height:1;">62%</p><p style="font-size:0.625rem; text-transform:uppercase; opacity:0.8;">Avg. Turnout</p></div>
-<div><p style="font-size:2rem; font-weight:700; line-height:1;">123</p><p style="font-size:0.625rem; text-transform:uppercase; opacity:0.8;">Active Democracies</p></div>
-</div>
-</div>
-<!-- Regular feature cards -->
-<div style="display:flex; flex-direction:column; gap:24px; grid-column: span 2;">
-<div class="feature-card animate-up" style="transition-delay:0.1s; display:flex; align-items:center; gap:16px; text-align:left; padding:24px;">
-<div style="width:48px; height:48px; background:var(--bg); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:1.5rem; flex-shrink:0;">📑</div>
-<div>
-<p style="font-size:0.875rem; font-weight:700; color:var(--primary); margin-bottom:4px;">Voter Registration</p>
-<p style="font-size:0.625rem; color:var(--muted);">Next Deadline: 12 Days</p>
-</div>
-<div style="margin-left:auto; background:rgba(232,160,32,0.2); color:var(--accent); font-size:0.625rem; font-weight:700; padding:4px 8px; border-radius:4px;">OPEN</div>
-</div>
-<div class="feature-card animate-up" style="transition-delay:0.2s; display:flex; align-items:center; gap:16px; text-align:left; padding:24px;">
-<div style="width:48px; height:48px; background:var(--bg); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:1.5rem; flex-shrink:0;">🤖</div>
-<div>
-<p style="font-size:0.875rem; font-weight:700; color:var(--primary); margin-bottom:4px;">AI Assistant</p>
-<p style="font-size:0.625rem; color:var(--muted);">Get unbiased answers instantly</p>
-</div>
-<div style="margin-left:auto; background:rgba(42,125,79,0.2); color:var(--accent2); font-size:0.625rem; font-weight:700; padding:4px 8px; border-radius:4px;">ONLINE</div>
-</div>
-</div>
-</div>
-</section>
-<section id="timeline" class="timeline-section" style="padding-top:24px;">
-<div class="container">
-<div class="section-header animate-up" style="max-width:600px; margin-left:auto; margin-right:auto;"><h2 class="section-title">The Election Lifecycle</h2><p class="muted">A clear, chronological breakdown of how democracy functions.</p></div>
-<div class="timeline">
-<div class="timeline-item left animate-up" style="--dot-color:var(--primary)"><div class="timeline-content" style="text-align:left;"><span class="timeline-date">Months Before</span><h3 class="timeline-title" style="color:var(--primary);">🏛️ Candidate Filing & Primaries</h3><p class="timeline-desc">Candidates officially file their intent to run for office. Political parties hold primary elections to select their nominees. Voters within each party choose who represents them in the general election.</p></div></div>
-<div class="timeline-item right animate-up" style="--dot-color:var(--accent2)"><div class="timeline-content" style="text-align:left;"><span class="timeline-date">Ongoing Deadlines</span><h3 class="timeline-title" style="color:var(--primary);">📋 Voter Registration</h3><p class="timeline-desc">Citizens must register before the deadline to appear on the official voter roll. Requirements include proof of citizenship, minimum age of 18, and residency proof. Some regions allow same-day or automatic voter registration.</p></div></div>
-<div class="timeline-item left animate-up" style="--dot-color:var(--accent)"><div class="timeline-content" style="text-align:left;"><span class="timeline-date">Weeks Before</span><h3 class="timeline-title" style="color:var(--primary);">📣 Campaigning & Debates</h3><p class="timeline-desc">Candidates travel, advertise, and hold public rallies to earn votes. Official debates allow candidates to present and defend their positions. Campaign finance laws strictly regulate how money is raised and spent.</p></div></div>
-<div class="timeline-item right animate-up" style="--dot-color:var(--danger)"><div class="timeline-content" style="text-align:left;"><span class="timeline-date">Election Day</span><h3 class="timeline-title" style="color:var(--primary);">🗳️ Voting</h3><p class="timeline-desc">Registered voters visit their designated polling place to cast their ballot. Voting methods include in-person, mail-in, and early voting options. Official observers from all parties monitor the process for transparency.</p></div></div>
-<div class="timeline-item left animate-up" style="--dot-color:var(--purple)"><div class="timeline-content" style="text-align:left;"><span class="timeline-date">Days After</span><h3 class="timeline-title" style="color:var(--primary);">🔢 Counting & Canvassing</h3><p class="timeline-desc">All ballots including provisional and mail-in are officially counted. The canvass is a formal review of every vote cast in the jurisdiction. Recounts may be triggered automatically when margins fall below 0.5%.</p></div></div>
-<div class="timeline-item right animate-up" style="--dot-color:var(--blue)"><div class="timeline-content" style="text-align:left;"><span class="timeline-date">Weeks After</span><h3 class="timeline-title" style="color:var(--primary);">✅ Certification & Transition</h3><p class="timeline-desc">Government authorities formally certify the final election results. All legal challenges must be resolved before certification is complete. The winner is inaugurated and power transfers peacefully — democracy's hallmark.</p></div></div>
-</div>
-</div>
-</section>
-<section id="quiz" class="quiz-section">
-<div class="container">
-<div class="section-header animate-up"><h2 class="section-title">Knowledge Check</h2><p style="color:rgba(255,255,255,0.8)">Test your understanding of the democratic process.</p></div>
-<div class="quiz-card animate-up" id="quizContainer" aria-live="polite">
-<div id="quizState">
-<div class="quiz-progress"><div class="quiz-bar" id="quizBar"></div></div>
-<div class="quiz-step" id="quizStep">Question 1 of 10</div>
-<h3 class="quiz-question" id="quizQuestion">Loading question...</h3>
-<div class="quiz-options" id="quizOptions"></div>
-<div class="quiz-explanation" id="quizExplanation"></div>
-<button class="btn btn-primary quiz-next" id="quizNextBtn">Next Question →</button>
-</div>
-<div class="quiz-result" id="quizResult">
-<div class="quiz-result-emoji" id="resultEmoji">🏆</div>
-<h3 class="quiz-question" id="resultTitle">Quiz Complete!</h3>
-<p style="margin-bottom:24px" id="resultText">You scored X out of 10.</p>
-<button class="btn btn-primary" id="quizRestartBtn" style="margin-bottom: 12px;">Try Again</button>
-<br/>
-<button class="btn btn-outline" id="loginBtn" style="color:var(--primary); border-color:var(--primary);">Sign In with Google to Save Scores</button>
-</div>
-</div>
-</div>
-</section>
-<section id="assistant" class="ai-section">
-<div class="container">
-<div class="section-header animate-up"><h2 class="section-title">Ask ElectEd</h2><p class="muted">Your personal, nonpartisan guide to how elections work.</p></div>
-<div class="ai-container animate-up">
-<div class="ai-info">
-<h3>Your Personal Election Guide</h3>
-<div class="ai-subtitle">Powered by <span class="gemini-badge">Google Gemini AI</span></div>
-<p style="color:var(--muted); font-size:0.95rem;">Ask any question about electoral processes, voting rights, or political structures. The assistant provides clear, unbiased explanations.</p>
-<ul class="ai-features"><li>⚡ Instant answers</li><li>⚖️ 100% Nonpartisan</li><li>🗣️ Simple language</li><li>🕒 Always available</li></ul>
-</div>
-<div class="chat-interface">
-<div class="chat-log" id="chatLog" aria-live="polite"><div class="chat-msg msg-bot">Hello! I'm ElectEd. What would you like to know about the election process today?</div></div>
-<div class="chat-input-area">
-<div class="quick-prompts" id="quickPrompts">
-<button class="chip">What is a primary?</button>
-<button class="chip">How does the Electoral College work?</button>
-<button class="chip">Explain gerrymandering</button>
-<button class="chip">What are mail-in ballots?</button>
-</div>
-<form class="input-wrapper" id="chatForm">
-<input type="text" id="chatInput" class="chat-input" placeholder="Type your question..." autocomplete="off" maxlength="500" required>
-<button type="submit" class="send-btn" id="sendBtn" aria-label="Send message">↑</button>
-</form>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="glossary" class="glossary-section">
-<div class="container">
-<div class="section-header animate-up"><h2 class="section-title">Election Glossary</h2><p class="muted">Demystifying political terminology.</p></div>
-<div class="glossary-controls animate-up">
-<div class="search-wrapper">
-<span class="search-icon" aria-hidden="true">🔍</span>
-<input type="text" id="glossarySearch" class="search-input" placeholder="Search for terminology, laws, or processes..." aria-label="Search glossary">
-</div>
-<div class="filter-chips" id="glossaryFilters">
-<button class="filter-btn active" data-filter="All">All</button>
-<button class="filter-btn" data-filter="Voting">Voting</button>
-<button class="filter-btn" data-filter="People">People</button>
-<button class="filter-btn" data-filter="Process">Process</button>
-<button class="filter-btn" data-filter="Structure">Structure</button>
-<button class="filter-btn" data-filter="Rights">Rights</button>
-<button class="filter-btn" data-filter="Systems">Systems</button>
-<button class="filter-btn" data-filter="Stats">Stats</button>
-<button class="filter-btn" data-filter="Counting">Counting</button>
-<button class="filter-btn" data-filter="Politics">Politics</button>
-</div>
-</div>
-<div class="glossary-grid" id="glossaryGrid"></div>
-</div>
-</section>
-<section id="stats" class="stats-section">
-<div class="container">
-<div class="section-header animate-up"><h2 class="section-title">Democracy by the Numbers</h2><p class="muted">Global perspectives on voting and participation.</p></div>
-<div class="stats-grid animate-up" id="statsGrid">
-<div class="stat-card"><div class="stat-val counter" data-target="193">0</div><div class="stat-label">UN Member States</div></div>
-<div class="stat-card"><div class="stat-val counter" data-target="123">0</div><div class="stat-label">Electoral Democracies</div></div>
-<div class="stat-card"><div class="stat-val"><span class="counter" data-target="4.2">0</span>B</div><div class="stat-label">Eligible Voters</div></div>
-<div class="stat-card"><div class="stat-val"><span class="counter" data-target="62">0</span>%</div><div class="stat-label">Avg Global Turnout</div></div>
-</div>
-<div class="charts-container animate-up">
-<div class="chart-box">
-<h3>Voter Turnout by Region</h3>
-<div class="bar-chart" id="barChart">
-<div class="bar-row"><div class="bar-label">Oceania</div><div class="bar-track"><div class="bar-fill" data-width="80" style="background:var(--accent)">80%</div></div></div>
-<div class="bar-row"><div class="bar-label">Europe</div><div class="bar-track"><div class="bar-fill" data-width="72" style="background:var(--accent2)">72%</div></div></div>
-<div class="bar-row"><div class="bar-label">South America</div><div class="bar-track"><div class="bar-fill" data-width="68" style="background:var(--primary)">68%</div></div></div>
-<div class="bar-row"><div class="bar-label">Asia</div><div class="bar-track"><div class="bar-fill" data-width="62" style="background:var(--accent)">62%</div></div></div>
-<div class="bar-row"><div class="bar-label">Africa</div><div class="bar-track"><div class="bar-fill" data-width="58" style="background:var(--accent2)">58%</div></div></div>
-<div class="bar-row"><div class="bar-label">North America</div><div class="bar-track"><div class="bar-fill" data-width="55" style="background:var(--primary)">55%</div></div></div>
-</div>
-</div>
-<div class="chart-box">
-<h3>Global Voting Systems</h3>
-<div class="donut-container">
-<div class="donut-chart" role="img" aria-label="Pie chart showing voting systems"></div>
-<ul class="donut-legend">
-<li><span class="legend-dot" style="background:var(--primary)"></span> First Past Post (42%)</li>
-<li><span class="legend-dot" style="background:var(--accent2)"></span> Proportional (38%)</li>
-<li><span class="legend-dot" style="background:var(--accent)"></span> Mixed (14%)</li>
-<li><span class="legend-dot" style="background:var(--muted)"></span> Other (6%)</li>
-</ul></div></div></div></div>
-</section>
-</main>
-<footer class="footer">
-<div class="container">
-<div class="footer-grid">
-<div class="footer-col"><span class="footer-logo">Elect🗳️Ed</span><p class="footer-desc">Making democracy understandable, one voter at a time.</p></div>
-<div class="footer-col"><h4>Quick Links</h4><ul class="footer-links"><li><a href="#hero">Home</a></li><li><a href="#timeline">Timeline</a></li><li><a href="#quiz">Interactive Quiz</a></li><li><a href="#glossary">Glossary</a></li></ul></div>
-<div class="footer-col"><h4>Resources</h4><ul class="footer-links"><li><a href="#stats">Global Stats</a></li><li><a href="#assistant">AI Assistant</a></li><li><a href="#">Accessibility</a></li><li><a href="#">Privacy</a></li></ul></div>
-<div class="footer-col"><h4>Powered By</h4><ul class="footer-links"><li><a href="#" style="color:#4285F4">Google Gemini API</a></li><li><a href="#">Google Fonts</a></li><li><a href="#">Firebase Hosting</a></li></ul></div>
-</div>
-</div>
-<!-- Horizontal Ticker/Footer -->
-<div style="height: 48px; background: #1a1a2e; margin: 0; padding: 0; display:flex; align-items:center; overflow:hidden; position:absolute; bottom:0; left:0; width:100%; white-space:nowrap; z-index: 10;">
-<div style="display:flex; gap: 48px; font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.2em; color: rgba(255, 255, 255, 0.4); padding: 0 32px; animation: ticker 20s linear infinite;">
-<span>Voter Turnout by Region: Oceania 80%</span>
-<span>•</span>
-<span>Europe 72%</span>
-<span>•</span>
-<span>South America 68%</span>
-<span>•</span>
-<span>Asia 62%</span>
-<span>•</span>
-<span>Africa 58%</span>
-<span>•</span>
-<span>North America 55%</span>
-</div>
-</div>
-<style>
-@keyframes ticker {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-100%); }
-}
-</style>
-</footer>
-<script type="module" src="/src/main.tsx"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Understand how elections work with this interactive, educational, and AI-powered complete guide to the democratic process."
+    />
+    <meta name="theme-color" content="#1a3c5e" />
+    <title>ElectEd - Understand How Elections Work</title>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://generativelanguage.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <nav class="navbar" id="navbar">
+      <div class="container nav-content">
+        <a href="#" class="logo">Elect🗳️Ed</a>
+        <div class="nav-links" id="navLinks">
+          <a href="#hero" class="nav-link active" aria-current="page">Home</a>
+          <a href="#timeline" class="nav-link">Timeline</a>
+          <a href="#quiz" class="nav-link">Quiz</a>
+          <a href="#assistant" class="nav-link">Assistant</a>
+          <a href="#glossary" class="nav-link">Glossary</a>
+          <a href="#stats" class="nav-link">Stats</a>
+        </div>
+        <button
+          class="menu-btn"
+          id="menuBtn"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
+      </div>
+    </nav>
+    <main id="main-content" style="padding-bottom: 48px">
+      <section id="hero" class="container">
+        <div class="hero">
+          <div class="hero-content">
+            <span class="badge">Interactive Education</span>
+            <h1>Understand How<br />Elections Work</h1>
+            <p>
+              Interactive. Educational. Powered by AI. Your complete guide to
+              the democratic process, from registration to certification.
+            </p>
+            <div>
+              <a href="#timeline" class="btn btn-primary">Explore Timeline</a
+              ><a href="#assistant" class="btn btn-outline">Ask AI Assistant</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="features container">
+        <div class="features-grid">
+          <!-- Primary feature card (larger/accented) -->
+          <div
+            class="feature-card animate-up"
+            style="
+              background-color: var(--accent2);
+              color: white;
+              border: none;
+              grid-column: span 2;
+              padding: 32px 24px;
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+              text-align: left;
+              justify-content: space-between;
+            "
+          >
+            <h3
+              style="
+                font-family: &quot;Playfair Display&quot;, serif;
+                font-size: 1.5rem;
+                margin-bottom: 8px;
+              "
+            >
+              Democracy Today
+            </h3>
+            <p style="opacity: 0.8; font-size: 0.9rem; margin-bottom: 24px">
+              Monitoring voting systems across 193 UN Member States in
+              real-time.
+            </p>
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                margin-top: auto;
+              "
+            >
+              <div>
+                <p style="font-size: 2rem; font-weight: 700; line-height: 1">
+                  62%
+                </p>
+                <p
+                  style="
+                    font-size: 0.625rem;
+                    text-transform: uppercase;
+                    opacity: 0.8;
+                  "
+                >
+                  Avg. Turnout
+                </p>
+              </div>
+              <div>
+                <p style="font-size: 2rem; font-weight: 700; line-height: 1">
+                  123
+                </p>
+                <p
+                  style="
+                    font-size: 0.625rem;
+                    text-transform: uppercase;
+                    opacity: 0.8;
+                  "
+                >
+                  Active Democracies
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Regular feature cards -->
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              gap: 24px;
+              grid-column: span 2;
+            "
+          >
+            <div
+              class="feature-card animate-up"
+              style="
+                transition-delay: 0.1s;
+                display: flex;
+                align-items: center;
+                gap: 16px;
+                text-align: left;
+                padding: 24px;
+              "
+            >
+              <div
+                style="
+                  width: 48px;
+                  height: 48px;
+                  background: var(--bg);
+                  border-radius: 12px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 1.5rem;
+                  flex-shrink: 0;
+                "
+              >
+                📑
+              </div>
+              <div>
+                <p
+                  style="
+                    font-size: 0.875rem;
+                    font-weight: 700;
+                    color: var(--primary);
+                    margin-bottom: 4px;
+                  "
+                >
+                  Voter Registration
+                </p>
+                <p style="font-size: 0.625rem; color: var(--muted)">
+                  Next Deadline: 12 Days
+                </p>
+              </div>
+              <div
+                style="
+                  margin-left: auto;
+                  background: rgba(232, 160, 32, 0.2);
+                  color: var(--accent);
+                  font-size: 0.625rem;
+                  font-weight: 700;
+                  padding: 4px 8px;
+                  border-radius: 4px;
+                "
+              >
+                OPEN
+              </div>
+            </div>
+            <div
+              class="feature-card animate-up"
+              style="
+                transition-delay: 0.2s;
+                display: flex;
+                align-items: center;
+                gap: 16px;
+                text-align: left;
+                padding: 24px;
+              "
+            >
+              <div
+                style="
+                  width: 48px;
+                  height: 48px;
+                  background: var(--bg);
+                  border-radius: 12px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 1.5rem;
+                  flex-shrink: 0;
+                "
+              >
+                🤖
+              </div>
+              <div>
+                <p
+                  style="
+                    font-size: 0.875rem;
+                    font-weight: 700;
+                    color: var(--primary);
+                    margin-bottom: 4px;
+                  "
+                >
+                  AI Assistant
+                </p>
+                <p style="font-size: 0.625rem; color: var(--muted)">
+                  Get unbiased answers instantly
+                </p>
+              </div>
+              <div
+                style="
+                  margin-left: auto;
+                  background: rgba(42, 125, 79, 0.2);
+                  color: var(--accent2);
+                  font-size: 0.625rem;
+                  font-weight: 700;
+                  padding: 4px 8px;
+                  border-radius: 4px;
+                "
+              >
+                ONLINE
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="timeline" class="timeline-section" style="padding-top: 24px">
+        <div class="container">
+          <div
+            class="section-header animate-up"
+            style="max-width: 600px; margin-left: auto; margin-right: auto"
+          >
+            <h2 class="section-title">The Election Lifecycle</h2>
+            <p class="muted">
+              A clear, chronological breakdown of how democracy functions.
+            </p>
+          </div>
+          <div class="timeline">
+            <div
+              class="timeline-item left animate-up"
+              style="--dot-color: var(--primary)"
+            >
+              <div class="timeline-content" style="text-align: left">
+                <span class="timeline-date">Months Before</span>
+                <h3 class="timeline-title" style="color: var(--primary)">
+                  🏛️ Candidate Filing & Primaries
+                </h3>
+                <p class="timeline-desc">
+                  Candidates officially file their intent to run for office.
+                  Political parties hold primary elections to select their
+                  nominees. Voters within each party choose who represents them
+                  in the general election.
+                </p>
+              </div>
+            </div>
+            <div
+              class="timeline-item right animate-up"
+              style="--dot-color: var(--accent2)"
+            >
+              <div class="timeline-content" style="text-align: left">
+                <span class="timeline-date">Ongoing Deadlines</span>
+                <h3 class="timeline-title" style="color: var(--primary)">
+                  📋 Voter Registration
+                </h3>
+                <p class="timeline-desc">
+                  Citizens must register before the deadline to appear on the
+                  official voter roll. Requirements include proof of
+                  citizenship, minimum age of 18, and residency proof. Some
+                  regions allow same-day or automatic voter registration.
+                </p>
+              </div>
+            </div>
+            <div
+              class="timeline-item left animate-up"
+              style="--dot-color: var(--accent)"
+            >
+              <div class="timeline-content" style="text-align: left">
+                <span class="timeline-date">Weeks Before</span>
+                <h3 class="timeline-title" style="color: var(--primary)">
+                  📣 Campaigning & Debates
+                </h3>
+                <p class="timeline-desc">
+                  Candidates travel, advertise, and hold public rallies to earn
+                  votes. Official debates allow candidates to present and defend
+                  their positions. Campaign finance laws strictly regulate how
+                  money is raised and spent.
+                </p>
+              </div>
+            </div>
+            <div
+              class="timeline-item right animate-up"
+              style="--dot-color: var(--danger)"
+            >
+              <div class="timeline-content" style="text-align: left">
+                <span class="timeline-date">Election Day</span>
+                <h3 class="timeline-title" style="color: var(--primary)">
+                  🗳️ Voting
+                </h3>
+                <p class="timeline-desc">
+                  Registered voters visit their designated polling place to cast
+                  their ballot. Voting methods include in-person, mail-in, and
+                  early voting options. Official observers from all parties
+                  monitor the process for transparency.
+                </p>
+              </div>
+            </div>
+            <div
+              class="timeline-item left animate-up"
+              style="--dot-color: var(--purple)"
+            >
+              <div class="timeline-content" style="text-align: left">
+                <span class="timeline-date">Days After</span>
+                <h3 class="timeline-title" style="color: var(--primary)">
+                  🔢 Counting & Canvassing
+                </h3>
+                <p class="timeline-desc">
+                  All ballots including provisional and mail-in are officially
+                  counted. The canvass is a formal review of every vote cast in
+                  the jurisdiction. Recounts may be triggered automatically when
+                  margins fall below 0.5%.
+                </p>
+              </div>
+            </div>
+            <div
+              class="timeline-item right animate-up"
+              style="--dot-color: var(--blue)"
+            >
+              <div class="timeline-content" style="text-align: left">
+                <span class="timeline-date">Weeks After</span>
+                <h3 class="timeline-title" style="color: var(--primary)">
+                  ✅ Certification & Transition
+                </h3>
+                <p class="timeline-desc">
+                  Government authorities formally certify the final election
+                  results. All legal challenges must be resolved before
+                  certification is complete. The winner is inaugurated and power
+                  transfers peacefully — democracy's hallmark.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="quiz" class="quiz-section">
+        <div class="container">
+          <div class="section-header animate-up">
+            <h2 class="section-title">Knowledge Check</h2>
+            <p style="color: rgba(255, 255, 255, 0.8)">
+              Test your understanding of the democratic process.
+            </p>
+          </div>
+          <div
+            class="quiz-card animate-up"
+            id="quizContainer"
+            aria-live="polite"
+          >
+            <div id="quizState">
+              <div class="quiz-progress">
+                <div class="quiz-bar" id="quizBar"></div>
+              </div>
+              <div class="quiz-step" id="quizStep">Question 1 of 10</div>
+              <h3 class="quiz-question" id="quizQuestion">
+                Loading question...
+              </h3>
+              <div class="quiz-options" id="quizOptions"></div>
+              <div class="quiz-explanation" id="quizExplanation"></div>
+              <button class="btn btn-primary quiz-next" id="quizNextBtn">
+                Next Question →
+              </button>
+            </div>
+            <div class="quiz-result" id="quizResult">
+              <div class="quiz-result-emoji" id="resultEmoji">🏆</div>
+              <h3 class="quiz-question" id="resultTitle">Quiz Complete!</h3>
+              <p style="margin-bottom: 24px" id="resultText">
+                You scored X out of 10.
+              </p>
+              <button
+                class="btn btn-primary"
+                id="quizRestartBtn"
+                style="margin-bottom: 12px"
+              >
+                Try Again
+              </button>
+              <br />
+              <button
+                class="btn btn-outline"
+                id="loginBtn"
+                style="color: var(--primary); border-color: var(--primary)"
+              >
+                Sign In with Google to Save Scores
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="assistant" class="ai-section">
+        <div class="container">
+          <div class="section-header animate-up">
+            <h2 class="section-title">Ask ElectEd</h2>
+            <p class="muted">
+              Your personal, nonpartisan guide to how elections work.
+            </p>
+          </div>
+          <div class="ai-container animate-up">
+            <div class="ai-info">
+              <h3>Your Personal Election Guide</h3>
+              <div class="ai-subtitle">
+                Powered by <span class="gemini-badge">Google Gemini AI</span>
+              </div>
+              <p style="color: var(--muted); font-size: 0.95rem">
+                Ask any question about electoral processes, voting rights, or
+                political structures. The assistant provides clear, unbiased
+                explanations.
+              </p>
+              <ul class="ai-features">
+                <li>⚡ Instant answers</li>
+                <li>⚖️ 100% Nonpartisan</li>
+                <li>🗣️ Simple language</li>
+                <li>🕒 Always available</li>
+              </ul>
+            </div>
+            <div class="chat-interface">
+              <div class="chat-log" id="chatLog" aria-live="polite">
+                <div class="chat-msg msg-bot">
+                  Hello! I'm ElectEd. What would you like to know about the
+                  election process today?
+                </div>
+              </div>
+              <div class="chat-input-area">
+                <div class="quick-prompts" id="quickPrompts">
+                  <button class="chip">What is a primary?</button>
+                  <button class="chip">
+                    How does the Electoral College work?
+                  </button>
+                  <button class="chip">Explain gerrymandering</button>
+                  <button class="chip">What are mail-in ballots?</button>
+                </div>
+                <form class="input-wrapper" id="chatForm">
+                  <label
+                    for="chatInput"
+                    class="visually-hidden"
+                    style="display: none"
+                    >Type your question</label
+                  >
+                  <input
+                    type="text"
+                    id="chatInput"
+                    class="chat-input"
+                    placeholder="Type your question..."
+                    autocomplete="off"
+                    maxlength="500"
+                    aria-label="Type your question to the AI assistant"
+                    required
+                  />
+                  <button
+                    type="submit"
+                    class="send-btn"
+                    id="sendBtn"
+                    aria-label="Send message"
+                  >
+                    ↑
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="glossary" class="glossary-section">
+        <div class="container">
+          <div class="section-header animate-up">
+            <h2 class="section-title">Election Glossary</h2>
+            <p class="muted">Demystifying political terminology.</p>
+          </div>
+          <div class="glossary-controls animate-up">
+            <div class="search-wrapper">
+              <span class="search-icon" aria-hidden="true">🔍</span>
+              <input
+                type="text"
+                id="glossarySearch"
+                class="search-input"
+                placeholder="Search for terminology, laws, or processes..."
+                aria-label="Search glossary"
+              />
+            </div>
+            <div class="filter-chips" id="glossaryFilters">
+              <button class="filter-btn active" data-filter="All">All</button>
+              <button class="filter-btn" data-filter="Voting">Voting</button>
+              <button class="filter-btn" data-filter="People">People</button>
+              <button class="filter-btn" data-filter="Process">Process</button>
+              <button class="filter-btn" data-filter="Structure">
+                Structure
+              </button>
+              <button class="filter-btn" data-filter="Rights">Rights</button>
+              <button class="filter-btn" data-filter="Systems">Systems</button>
+              <button class="filter-btn" data-filter="Stats">Stats</button>
+              <button class="filter-btn" data-filter="Counting">
+                Counting
+              </button>
+              <button class="filter-btn" data-filter="Politics">
+                Politics
+              </button>
+            </div>
+          </div>
+          <div class="glossary-grid" id="glossaryGrid"></div>
+        </div>
+      </section>
+      <section id="stats" class="stats-section">
+        <div class="container">
+          <div class="section-header animate-up">
+            <h2 class="section-title">Democracy by the Numbers</h2>
+            <p class="muted">
+              Global perspectives on voting and participation.
+            </p>
+          </div>
+          <div class="stats-grid animate-up" id="statsGrid">
+            <div class="stat-card">
+              <div class="stat-val counter" data-target="193">0</div>
+              <div class="stat-label">UN Member States</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-val counter" data-target="123">0</div>
+              <div class="stat-label">Electoral Democracies</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-val">
+                <span class="counter" data-target="4.2">0</span>B
+              </div>
+              <div class="stat-label">Eligible Voters</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-val">
+                <span class="counter" data-target="62">0</span>%
+              </div>
+              <div class="stat-label">Avg Global Turnout</div>
+            </div>
+          </div>
+          <div class="charts-container animate-up">
+            <div class="chart-box">
+              <h3>Voter Turnout by Region</h3>
+              <div class="bar-chart" id="barChart">
+                <div class="bar-row">
+                  <div class="bar-label">Oceania</div>
+                  <div class="bar-track">
+                    <div
+                      class="bar-fill"
+                      data-width="80"
+                      style="background: var(--accent)"
+                    >
+                      80%
+                    </div>
+                  </div>
+                </div>
+                <div class="bar-row">
+                  <div class="bar-label">Europe</div>
+                  <div class="bar-track">
+                    <div
+                      class="bar-fill"
+                      data-width="72"
+                      style="background: var(--accent2)"
+                    >
+                      72%
+                    </div>
+                  </div>
+                </div>
+                <div class="bar-row">
+                  <div class="bar-label">South America</div>
+                  <div class="bar-track">
+                    <div
+                      class="bar-fill"
+                      data-width="68"
+                      style="background: var(--primary)"
+                    >
+                      68%
+                    </div>
+                  </div>
+                </div>
+                <div class="bar-row">
+                  <div class="bar-label">Asia</div>
+                  <div class="bar-track">
+                    <div
+                      class="bar-fill"
+                      data-width="62"
+                      style="background: var(--accent)"
+                    >
+                      62%
+                    </div>
+                  </div>
+                </div>
+                <div class="bar-row">
+                  <div class="bar-label">Africa</div>
+                  <div class="bar-track">
+                    <div
+                      class="bar-fill"
+                      data-width="58"
+                      style="background: var(--accent2)"
+                    >
+                      58%
+                    </div>
+                  </div>
+                </div>
+                <div class="bar-row">
+                  <div class="bar-label">North America</div>
+                  <div class="bar-track">
+                    <div
+                      class="bar-fill"
+                      data-width="55"
+                      style="background: var(--primary)"
+                    >
+                      55%
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chart-box">
+              <h3>Global Voting Systems</h3>
+              <div class="donut-container">
+                <div
+                  class="donut-chart"
+                  role="img"
+                  aria-label="Pie chart showing voting systems"
+                ></div>
+                <ul class="donut-legend">
+                  <li>
+                    <span
+                      class="legend-dot"
+                      style="background: var(--primary)"
+                    ></span>
+                    First Past Post (42%)
+                  </li>
+                  <li>
+                    <span
+                      class="legend-dot"
+                      style="background: var(--accent2)"
+                    ></span>
+                    Proportional (38%)
+                  </li>
+                  <li>
+                    <span
+                      class="legend-dot"
+                      style="background: var(--accent)"
+                    ></span>
+                    Mixed (14%)
+                  </li>
+                  <li>
+                    <span
+                      class="legend-dot"
+                      style="background: var(--muted)"
+                    ></span>
+                    Other (6%)
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <span class="footer-logo">Elect🗳️Ed</span>
+            <p class="footer-desc">
+              Making democracy understandable, one voter at a time.
+            </p>
+          </div>
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="#hero">Home</a></li>
+              <li><a href="#timeline">Timeline</a></li>
+              <li><a href="#quiz">Interactive Quiz</a></li>
+              <li><a href="#glossary">Glossary</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Resources</h4>
+            <ul class="footer-links">
+              <li><a href="#stats">Global Stats</a></li>
+              <li><a href="#assistant">AI Assistant</a></li>
+              <li><a href="#">Accessibility</a></li>
+              <li><a href="#">Privacy</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Powered By</h4>
+            <ul class="footer-links">
+              <li><a href="#" style="color: #4285f4">Google Gemini API</a></li>
+              <li><a href="#">Google Fonts</a></li>
+              <li><a href="#">Firebase Hosting</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- Horizontal Ticker/Footer -->
+      <div
+        style="
+          height: 48px;
+          background: #1a1a2e;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          align-items: center;
+          overflow: hidden;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          white-space: nowrap;
+          z-index: 10;
+        "
+      >
+        <div
+          style="
+            display: flex;
+            gap: 48px;
+            font-size: 10px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: rgba(255, 255, 255, 0.4);
+            padding: 0 32px;
+            animation: ticker 20s linear infinite;
+          "
+        >
+          <span>Voter Turnout by Region: Oceania 80%</span>
+          <span>•</span>
+          <span>Europe 72%</span>
+          <span>•</span>
+          <span>South America 68%</span>
+          <span>•</span>
+          <span>Asia 62%</span>
+          <span>•</span>
+          <span>Africa 58%</span>
+          <span>•</span>
+          <span>North America 55%</span>
+        </div>
+      </div>
+      <style>
+        @keyframes ticker {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-100%);
+          }
+        }
+      </style>
+    </footer>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>

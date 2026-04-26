@@ -13,6 +13,10 @@ const dom = `
 <button id="loginBtn"></button>
 <div id="chatLog"></div><form id="chatForm"></form>
 <input id="chatInput"><button id="sendBtn"></button>
+<button class="chip">What is a ballot?</button>
+<div class="counter" data-target="100">0</div>
+<div class="counter" data-target="50.5">0</div>
+<div class="bar-fill" data-width="50"></div>
 `;
 
 document.body.innerHTML = dom;
@@ -22,6 +26,12 @@ window.IntersectionObserver = class {
   unobserve() {}
   disconnect() {}
 };
+Object.defineProperty(global.navigator, 'serviceWorker', {
+  value: {
+    register: () => Promise.resolve(),
+  },
+  configurable: true,
+});
 
 beforeAll(() => {
 });
