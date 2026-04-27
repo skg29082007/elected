@@ -272,7 +272,7 @@ const glossarySearch = document.getElementById("glossarySearch");
 const glossaryFilters = document.querySelectorAll(".filter-btn");
 let currentFilter = "All";
 export const renderGlossary = (filter, search) => {
-  glossaryGrid.innerHTML = "";
+  glossaryGrid.textContent = "";
   const termStr = search.toLowerCase();
   const filtered = glossaryData.filter((item) => {
     const [term, cat, def] = item.split("-");
@@ -283,18 +283,36 @@ export const renderGlossary = (filter, search) => {
     return matchesFilter && matchesSearch;
   });
   if (filtered.length === 0) {
-    glossaryGrid.innerHTML =
-      '<p class="muted" style="grid-column:1/-1;text-align:center;">No terms found.</p>';
+    const p = document.createElement("p");
+    p.className = "muted";
+    p.style.cssText = "grid-column:1/-1;text-align:center;";
+    p.textContent = "No terms found.";
+    glossaryGrid.appendChild(p);
     return;
   }
   filtered.forEach((item) => {
     const [term, cat, def] = item.split("-");
     const card = document.createElement("div");
     card.className = "term-card";
-    card.innerHTML = `<div class="term-header"><span class="term-title"></span><span class="term-cat"></span></div><div class="term-def"></div>`;
-    card.querySelector(".term-title").textContent = term;
-    card.querySelector(".term-cat").textContent = cat;
-    card.querySelector(".term-def").textContent = def;
+
+    const header = document.createElement("div");
+    header.className = "term-header";
+    const titleSpan = document.createElement("span");
+    titleSpan.className = "term-title";
+    const catSpan = document.createElement("span");
+    catSpan.className = "term-cat";
+    header.appendChild(titleSpan);
+    header.appendChild(catSpan);
+    
+    const defDiv = document.createElement("div");
+    defDiv.className = "term-def";
+    
+    card.appendChild(header);
+    card.appendChild(defDiv);
+
+    titleSpan.textContent = term;
+    catSpan.textContent = cat;
+    defDiv.textContent = def;
     glossaryGrid.appendChild(card);
   });
 };
@@ -327,7 +345,7 @@ export const renderQuestion = () => {
   qStep.textContent = `Question ${currentQ + 1} of ${quizData.length}`;
   qBar.style.width = `${(currentQ / quizData.length) * 100}%`;
   qTitle.textContent = q.q;
-  qOptions.innerHTML = "";
+  qOptions.textContent = "";
   qExp.style.display = "none";
   qNextBtn.style.display = "none";
   q.opts.forEach((optText, index) => {
@@ -450,7 +468,14 @@ const appendMessage = (role, text) => {
 const showLoading = () => {
   const div = document.createElement("div");
   div.className = "chat-msg msg-bot typing-indicator";
-  div.innerHTML = `<div class="typing-dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>`;
+  const dotsContainer = document.createElement("div");
+  dotsContainer.className = "typing-dots";
+  for (let i = 0; i < 3; i++) {
+    const dot = document.createElement("div");
+    dot.className = "dot";
+    dotsContainer.appendChild(dot);
+  }
+  div.appendChild(dotsContainer);
   chatLog.appendChild(div);
   chatLog.scrollTop = chatLog.scrollHeight;
   return div;

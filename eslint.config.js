@@ -1,3 +1,5 @@
+import firebaseRulesPlugin from '@firebase/eslint-plugin-security-rules';
+
 export default [
   {
     ignores: ['dist/**/*']
@@ -8,5 +10,6 @@ export default [
       "no-console": "off",
       "semi": ["error", "always"]
     }
-  }
+  },
+  firebaseRulesPlugin.configs['flat/recommended']
 ];

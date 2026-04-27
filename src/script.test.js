@@ -138,6 +138,13 @@ describe("Application Core Logic", () => {
       }).not.toThrow();
     });
 
+    it("tests signInWithGoogle success", async () => {
+      const authMod = await import("firebase/auth");
+      authMod.signInWithPopup.mockResolvedValueOnce({ user: { uid: '123' } });
+      await signInWithGoogle();
+      expect(authMod.signInWithPopup).toHaveBeenCalled();
+    });
+
     it("tests testConnection offline error handle", async () => {
       const errSpy = vi.spyOn(console, "error").mockImplementation(() => {});
       await testConnection();
@@ -302,8 +309,11 @@ describe("Application Core Logic", () => {
 
     it("handles answering questions correctly", () => {
         const optionBtn = document.createElement("button");
-        // force currentQ to 0
         handleAnswer(1, optionBtn); // ans is 1 for quizData[0]
+        
+        // click again
+        const optionBtn2 = document.createElement("button");
+        handleAnswer(2, optionBtn2); 
     });
 
     it("handles qNextBtn advancing questions and showing results", () => {
@@ -313,8 +323,33 @@ describe("Application Core Logic", () => {
         }
     });
 
+    it("nav items click with window size", () => {
+        window.innerWidth = 500;
+        const navItems = document.querySelectorAll(".nav-link");
+        if (navItems.length > 0) {
+            navItems[0].click();
+        }
+    });
+    
     it("handles Gemini connection warning when no API key", async () => {
-         // just placeholder
+         vi.stubEnv("GEMINI_API_KEY", "");
+         const { callGemini, quizData } = await import("./script.js?v=test");
+         
+         const nextBtn = document.getElementById("quizNextBtn");
+         if (nextBtn) {
+             nextBtn.click();
+             quizData.length = 1;
+             nextBtn.click();
+         }
+         
+         const glossaryFilters = document.querySelectorAll(".filter-btn");
+         if (glossaryFilters.length > 0) {
+             glossaryFilters[0].click();
+         }
+
+         const res = await callGemini("test");
+         expect(res).toContain("enable AI responses");
+         vi.unstubAllEnvs();
     });
     
     it("triggerBars is safe to call twice", () => {
@@ -331,6 +366,49 @@ describe("Application Core Logic", () => {
       btn.dataset.filter = "Voting";
       document.body.appendChild(btn);
       expect(btn.classList.contains("filter-btn")).toBe(true);
+    });
+  });
+
+  describe("Observers", () => {
+    it("calls intersection observers", async () => {
+         const script = await import("./script.js");
+         expect(window.IntersectionObservers.length).toBeGreaterThan(0);
+         
+         const scrollObsCb = window.IntersectionObservers[0];
+         if (scrollObsCb) {
+             scrollObsCb([{
+                 isIntersecting: true,
+                 target: { 
+                     id: "statsGrid", 
+                     classList: {
+                         add: vi.fn(),
+                         contains: (cl) => cl === "charts-container"
+                     }
+                 }
+             }]);
+         }
+
+         if (window.IntersectionObservers.length > 1) {
+             const spyObsCb = window.IntersectionObservers[1];
+             const a = document.createElement("a");
+             a.className = "nav-link";
+             a.href = "#statsGrid";
+             document.body.appendChild(a);
+
+             spyObsCb([{
+                 isIntersecting: true,
+                 target: { id: "statsGrid" }
+             }]);
+         }
+
+         // Test scroll handler
+         window.scrollY = 100;
+         window.dispatchEvent(new window.Event("scroll"));
+         expect(document.getElementById("navbar").classList.contains("scrolled")).toBe(true);
+
+         window.scrollY = 0;
+         window.dispatchEvent(new window.Event("scroll"));
+         expect(document.getElementById("navbar").classList.contains("scrolled")).toBe(false);
     });
   });
 });
